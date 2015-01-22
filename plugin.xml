@@ -1,0 +1,51 @@
+<!--
+Copyright 2015 Woon Tien Jing
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="org.cloudsky.cordovaplugins.uiresizeonkeyboard" version="1.0.0">
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <name>UI Resize on Keyboard</name>
+    <author>TJ Woon (tj@cloudsky.org)</author>
+    <description>
+        Plugin to prevent iOS keyboard from pushing our app UI off-screen.
+    </description>
+    <license>Apache 2.0</license>
+    <keywords>ios,keyboard,resize,pan</keywords>
+
+    <platform name="android">
+        <js-module src="dummy/csUIResizeOnKeyboard.js" name="csUIResizeOnKeyboard">
+            <clobbers target="cloudSky.UIResizeOnKeyboard" />
+        </js-module>
+    </platform>
+
+    <platform name="ios">
+        <js-module src="www/csUIResizeOnKeyboard.js" name="csUIResizeOnKeyboard">
+            <clobbers target="cloudSky.UIResizeOnKeyboard" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="CsUIResizeOnKeyboard">
+                <param name="ios-package" value="CsUIResizeOnKeyboard"/>
+            </feature>
+        </config-file>
+        <header-file src="ios/csUIResizeOnKeyboard.h" />
+        <source-file src="ios/csUIResizeOnKeyboard.m" />
+    </platform>
+
+</plugin>
