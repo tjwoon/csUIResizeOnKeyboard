@@ -24,11 +24,15 @@ CsUIResizeOnKeyboard.prototype = {}
 
 CsUIResizeOnKeyboard.prototype.preventPan = function (success, error)
 {
+    success = success || null
+    error = error || null
     exec(success, error, 'CsUIResizeOnKeyboard', 'preventPan', [])
 }
 
 CsUIResizeOnKeyboard.prototype.unpreventPan = function (success, error)
 {
+    success = success || null
+    error = error || null
     exec(success, error, 'CsUIResizeOnKeyboard', 'unpreventPan', [])
 }
 

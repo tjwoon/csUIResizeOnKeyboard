@@ -24,12 +24,12 @@ CsUIResizeOnKeyboard.prototype = {}
 
 CsUIResizeOnKeyboard.prototype.preventPan = function (success, error)
 {
-    setTimeout(success, 0)
+    if(success) setTimeout(success, 0)
 }
 
 CsUIResizeOnKeyboard.prototype.unpreventPan = function (success, error)
 {
-    setTimeout(success, 0)
+    if(success) setTimeout(success, 0)
 }
 
 module.exports = new CsUIResizeOnKeyboard
