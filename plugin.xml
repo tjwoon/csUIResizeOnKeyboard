@@ -29,6 +29,12 @@ limitations under the License.
     <license>Apache 2.0</license>
     <keywords>ios,keyboard,resize,pan</keywords>
 
+    <platform name="browser">
+        <js-module src="dummy/csUIResizeOnKeyboard.js" name="csUIResizeOnKeyboard">
+            <clobbers target="cloudSky.UIResizeOnKeyboard" />
+        </js-module>
+    </platform>
+
     <platform name="android">
         <js-module src="dummy/csUIResizeOnKeyboard.js" name="csUIResizeOnKeyboard">
             <clobbers target="cloudSky.UIResizeOnKeyboard" />
